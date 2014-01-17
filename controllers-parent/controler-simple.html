@@ -1,0 +1,19 @@
+<!-- Exemplo utilizando 1 controller -->
+<html ng-app>
+	<head>
+		 <script src="http://code.angularjs.org/1.0.1/angular-1.0.1.min.js"></script>
+		 <script src="address.js"></script>
+	</head>
+	<body>
+			<div ng-controller="AddressController">
+				<address>
+					<span>{{ address.CEP}}</span>
+					<span>{{ address.street}}</span>
+					<span>{{ address.number}}</span>
+					<span>{{ address.neighborhood}}</span>
+					<span>{{ address.city}}</span>
+					<span>{{ address.country}}</span>
+				</address>
+			</div>
+	</body>
+</html>
