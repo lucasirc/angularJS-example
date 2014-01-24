@@ -1,0 +1,40 @@
+<!-- Exemplo utilizando 2 controller -->
+<html ng-app>
+	<head>
+		 <script src="http://code.angularjs.org/1.2.9/angular.min.js"></script>
+		 <script src="address.js"></script>
+		 <script src="payment.js"></script>
+		 <script src="checkout.js"></script>
+	</head>
+	<body>
+		<div id="checkoutCtrl" ng-controller="CheckoutController">
+			<div ng-controller="AddressController">
+				<address>
+					<span>{{ address.CEP}}</span>
+					<span>{{ address.street}}</span>
+					<span>{{ address.number}}</span>
+					<span>{{ address.neighborhood}}</span>
+					<span>{{ address.city}}</span>
+					<span>{{ address.country}}</span>
+				</address>
+			</div>
+			<div id="paymentCtrl" ng-controller="PaymentController">
+				<ul>
+					<li ng-repeat="paymentTmp in payments">
+						{{ paymentTmp.type }} - {{ paymentTmp.bank }} - {{ paymentTmp.brand }}
+						<a ng-click="selectPayment(paymentTmp)">Selecionar </a>
+					</li>
+				</ul>
+			</div>
+
+
+			<div>
+				<h2>Pagamento Selecionado no Controller Checkout</h2>
+				{{ selectPayment.type }}
+
+			</div>
+		</div>
+
+
+	</body>
+</html>
